@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+{% block head %}
+    <title>Robot Kelly</title>
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> 
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    
+    <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One|Open+Sans" rel="stylesheet">
+    
+    <meta property="og: title" content="">
+    <meta property="og: type" content="">
+    <meta property="og: image" content="">
+{% endblock %}
+   
+</head>
+<body>
+{% block contents %}    
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+body { 
+    font-family: sans-serif; 
+    background: darkred; 
+    width: 90vw;
+    margin: 10vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Rubik Mono One', sans-serif, bold;
+}
+
+/*  why not inherit font-fam from html? */
+.lyrics-please {
+    padding: 10px 20px;
+    margin-left: 22px;
+    font-size: 1.5em;
+    text-decoration: none;
+    border-style: outset;
+    border-color: lightgray;
+    background-color: whitesmoke;
+    color: black;
+    font-family: 'Rubik Mono One', sans-serif, bold;
+}
+
+.lyrics-please:hover {
+    background-color: greenyellow;
+}
+
+.lyrics {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 50px;
+}
+
+.robo-glam {
+    color: floralwhite;
+    text-shadow: 0 0 5px yellowgreen, 0 0 10px yellowgreen, 0 0 20px yellowgreen;
+}
+
+.glitch {
+    font-size: 4em;
+    padding: 20px; 
+    animation: robotify 10s infinite alternate linear;
+}
+
+.glitch-container{
+    /* position: relative; */
+}
+
+/* .glitch {
+    position: absolute;
+    color: white;
+    padding: 20px;
+    font-size: 4em;
+    text-shadow: 0 0 5px yellowgreen, 0 0 10px yellowgreen, 0 0 20px yellowgreen;
+} */
+
+/* .glitch::before {
+    position: absolute;
+    left: -2px;
+    text-shadow: -1px 0 blue;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    position: absolute;
+    content: attr(data-text);
+    top: 0;
+    left: 2px;
+    text-shadow: -1px 0 yellow;
+
+  animation: glitch-anim-2 2s infinite linear alternate-reverse;
+} */
+
+
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(70px, 450px, 76px, 0);
+  }
+  20% {
+    clip: rect(29px, 450px, 16px, 0);
+  }
+  40% {
+    clip: rect(76px, 450px, 3px, 0);
+  }
+  60% {
+    clip: rect(42px, 450px, 78px, 0);
+  }
+  80% {
+    clip: rect(15px, 450px, 13px, 0);
+  }
+  100% {
+    clip: rect(53px, 450px, 5px, 0);
+  }
+}
+
+
+

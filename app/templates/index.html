@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+    <meta property="og: url" content="url_for(.index, _external=True)">
+{% endblock %}
+
+{% block contents %}
+    <div class="glitch-container">
+    <h1 data-text="R.Kelly" class="robo-glam glitch">R.Kelly</h1>
+    <a class="lyrics-please" href="{{url_for('.lyrics')}}">Please Write Me a Song</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{super()}}
+    <meta property="og: url" content="url_for(.linked_lyrics, id=id, _external=True)">
+{% endblock %}
+
+{% block contents %}
+    <div class="lyrics">
+        <h3 class="title">
+            {{ song.title | capitalize }}
+        </h3>
+        {{ song.song_lyrics | safe }}
+    </div>  
+
+    <div>
+        <h3 class="robo-glam">By Robot Kelly</h3>
+    </div>
+    <div>
+        <a href="url_for('.linked_lyrics', id=id)" title=""></a>
+    </div>
+{% endblock %}

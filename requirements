@@ -1,0 +1,10 @@
+flask
+moment
+manager
+flask_script
+
+markovify
+
+later
+flask_migrate
+sqlalchemy?
