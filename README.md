@@ -32,8 +32,8 @@ Things I'd like to change/fix/understand, roughly in order of my own confusednes
  linked_lyrics route song title:  None
  ```
 
-1. Is there a more conventional spot for the programming?
-1. I tried caching the text as a json, and ran `timeit` on loading the file + re-creating the Markov model vs loading the Markov model as a json. [I might not be doing this right.](https://github.com/hanhanhan/robot_rkelly/blob/master/timeit_test.py). Is there another place to keep it in scope for re-use? Better caching w/pickle? Recommended to use timeit with something that complex?
+1. I tried caching the model as a json, and ran `timeit` on loading the file + re-creating the Markov model vs loading the Markov model as a json. [I might not be doing this right.](https://github.com/hanhanhan/robot_rkelly/blob/master/timeit_test.py). Is there another place to keep it in scope for re-use? Better caching w/pickle? Recommended to use timeit with something that complex?
+1. Is there a more conventional/better spot for the programming?
 2. For a facebook preview image, do I make a (route to the image?)[https://developers.facebook.com/docs/sharing/webmasters]
 3. There's a subset of words I can start with - I'm interested in pulling that set out and choosing randomly + re-using to give songs a theme, but not sure how to break into markovify library.
 4. What's happening to lowercase everthing in the sentences?
