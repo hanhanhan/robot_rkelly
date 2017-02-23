@@ -1,13 +1,47 @@
 body { 
     font-family: sans-serif; 
     background: darkred; 
-    width: 90vw;
-    margin: 10vw;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    margin-left: 30hw;
+    padding-left: 30hw;
     font-family: 'Rubik Mono One', sans-serif, bold;
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+main {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10hw;
+  width: 70hw;
+}
+
+nav {
+  align-self: center;
+  flex: 1 0 40px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  display: block;
+  float: right;
+}
+
+h1, h2, h3 {
+  font-family: 'Rubik Mono One', sans-serif;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+preview {
+  margin: 30px;
 }
 
 /*  why not inherit font-fam from html? */
