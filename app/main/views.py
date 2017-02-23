@@ -61,7 +61,7 @@ def lyrics():
                 start = 0
             title_list = lyrics_words[start:end]
             title = " ".join(title_list).title()
-            print(title_word, 'title_word', title_list, 'title_list', title, 'title', print(type(title)))
+            print('\nmake_title()', title_word, 'title_word', title_list, 'title_list', title, 'title', type(title))
             return title
         else:
             make_title(lyrics)
@@ -89,7 +89,7 @@ def lyrics():
 @main.route('/song-lyrics/<int:id>', methods=['GET'])
 def linked_lyrics(id):
     song = SongLyrics.query.get_or_404(id)
-    print(song.title)
+    print('\nlinked_lyrics route song title: ', song.title)
     return render_template('lyrics.html', song=song)
 
 
