@@ -1,4 +1,9 @@
-data-dev.sqlite
 __pycache__
+config.py
 browserconfig.xml
 .DS_Store
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+notes
