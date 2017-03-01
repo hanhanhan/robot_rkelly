@@ -19,7 +19,7 @@ def index():
 def image():
     return render_template('image.html')
 
-# some way to combine with created link? make song upon link click at index?
+
 @main.route('/song-lyrics/')
 def lyrics():
     # move to init app + import?
@@ -35,7 +35,7 @@ def lyrics():
     # verses = randint(10, 14)
     repeat_chorus = randint(0, 1)
     chorus = None
-    lyrics = ""
+    song_lyrics = ""
 
     def add_line(section):
         line = lyrics_model.make_sentence(
@@ -51,9 +51,10 @@ def lyrics():
             section = add_line(section)
         return section + "<br>"
 
-    def make_title(lyrics):
-        lyrics_words = re.split('\s*<br>\s*|\W', lyrics)
+    def make_title(song_lyrics):
+        lyrics_words = re.split('\s*<br>\s*|\W', song_lyrics)
         title_word = sample(lyrics_words[:50], 1)[0]
+ 
         if len(title_word) > 3:
             end = lyrics_words.index(title_word) + 1
             start = randint(end - 3, end - 1)
@@ -63,22 +64,20 @@ def lyrics():
             title = " ".join(title_list).title()
             print('\nmake_title()', title_word, 'title_word', title_list, 'title_list', title, 'title', type(title))
             return title
-        else:
-            make_title(lyrics)
+
+        return make_title(song_lyrics)
 
     for v in range(verses):
-        lyrics = make_section(verse_length, lyrics)
+        song_lyrics = make_section(verse_length, song_lyrics)
 
         if not chorus or not repeat_chorus:
             chorus = make_section(chorus_length, "")
 
-        lyrics = lyrics + chorus 
+        song_lyrics = song_lyrics + chorus 
 
-
-    title = make_title(lyrics)
-    print(title, 'Title', type(title))
-
-    lyrics_db_item = SongLyrics(title=title, song_lyrics=lyrics)
+    song_title = make_title(song_lyrics)
+ 
+    lyrics_db_item = SongLyrics(title=song_title, song_lyrics=song_lyrics)
 
     db.session.add(lyrics_db_item)
     db.session.commit()

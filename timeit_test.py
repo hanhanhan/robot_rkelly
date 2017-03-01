@@ -31,7 +31,7 @@ def make_corpus():
 def main():
 
     print(timeit.timeit(open_file, number=20))
-    print(timeit.timeit(make_corpus, number=20))
+    print(timeit.timeit(make_file, number=20))
     # opening the file is much slower than re-creating!
     # (scrape) etta:rkelly_scrape hannah$ python test.py
     # 4.746850703959353
