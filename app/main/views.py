@@ -88,7 +88,6 @@ def lyrics():
 @main.route('/song-lyrics/<int:id>', methods=['GET'])
 def linked_lyrics(id):
     song = SongLyrics.query.get_or_404(id)
-    print('\nlinked_lyrics route song title: ', song.title)
     return render_template('lyrics.html', song=song)
 
 

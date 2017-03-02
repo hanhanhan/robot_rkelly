@@ -90,32 +90,38 @@ preview {
 }
 
 .glitch {
-    position: absolute;
-    top: 0px;
-    left: 0px;
+    position: relative;
     color: white;
     padding: 20px;
     font-size: 4em;
     text-shadow: 0 0 5px yellowgreen, 0 0 10px yellowgreen, 0 0 20px yellowgreen;
 }
 
-/* .glitch::before {
+.glitch::before {
     position: absolute;
+    content: attr(data-text);
+    padding: 20px;
+    top: 0px;
     left: -2px;
-    text-shadow: -1px 0 blue;
-    clip: rect(44px, 450px, 56px, 0);
-    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+    background: darkred;
+    text-shadow: -6px 0 blue;
+    
+    clip: rect(44px, 450px, 56px, 0); 
+    animation: glitch-anim 0.8s infinite linear alternate-reverse; 
 }
 
 .glitch::after {
     position: absolute;
     content: attr(data-text);
+    padding: 20px;
     top: 0;
     left: 2px;
-    text-shadow: -1px 0 yellow;
-
-  animation: glitch-anim-2 2s infinite linear alternate-reverse;
-} */
+    background: darkred;
+    text-shadow: -4px 0 yellow;
+    
+    clip: rect(40px, 450px, 56px, 0);
+    animation: glitch-anim 1.2s infinite linear alternate-reverse;
+}
 
 
 
