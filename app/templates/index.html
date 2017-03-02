@@ -6,8 +6,15 @@
 {% endblock %}
 
 {% block contents %}
-    <div class="glitch-container">
-    <h1 data-text="R.Kelly" class="robo-glam glitch">R.Kelly</h1>
-    <a class="lyrics-please" href="{{url_for('.lyrics')}}">Please Write Me a Song</a>
+
+    <div>
+
+        <div class="glitch-container">
+            <h1 data-text="R.Kelly" class="robo-glam glitch">R.Kelly</h1>
+        </div>
+        
+        <a class="lyrics-please" href="{{ url_for('.lyrics') }}">Please Write Me a Song</a>
+
     </div>
+
 {% endblock %}

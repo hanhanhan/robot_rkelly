@@ -21,6 +21,9 @@ main {
 nav {
   align-self: center;
   flex: 1 0 40px;
+  position: fixed;
+  top: 25vh;
+  right: 0px;
 }
 
 ul {
@@ -68,6 +71,9 @@ preview {
     margin-bottom: 50px;
 }
 
+.lyrics-please-container {
+}
+
 .robo-glam {
     color: floralwhite;
     text-shadow: 0 0 5px yellowgreen, 0 0 10px yellowgreen, 0 0 20px yellowgreen;
@@ -80,16 +86,18 @@ preview {
 }
 
 .glitch-container{
-    /* position: relative; */
+    position: relative;
 }
 
-/* .glitch {
+.glitch {
     position: absolute;
+    top: 0px;
+    left: 0px;
     color: white;
     padding: 20px;
     font-size: 4em;
     text-shadow: 0 0 5px yellowgreen, 0 0 10px yellowgreen, 0 0 20px yellowgreen;
-} */
+}
 
 /* .glitch::before {
     position: absolute;

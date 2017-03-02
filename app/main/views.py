@@ -62,7 +62,7 @@ def lyrics():
                 start = 0
             title_list = lyrics_words[start:end]
             title = " ".join(title_list).title()
-            print('\nmake_title()', title_word, 'title_word', title_list, 'title_list', title, 'title', type(title))
+            
             return title
 
         return make_title(song_lyrics)
