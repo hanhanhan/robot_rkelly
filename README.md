@@ -16,9 +16,6 @@ Things I'd like to change/fix/understand:
 2. For a facebook preview image, do I make a (route to the image?)[https://developers.facebook.com/docs/sharing/webmasters]
 3. There's a subset of words I can start with - I'm interested in pulling that set out and choosing randomly + re-using to give songs a theme, but not sure how to break into markovify library.
 4. What's happening to lowercase everthing in the sentences?
-3. I'd love to use a [glitch effect](https://css-tricks.com/glitch-effect-text-images-svg/) but can't get the words to stack on top of each other properly (CSS)
-3. I'd like to make the side bar 'sticky' and have size vary with screen. Use image sets? VW? 
-4. I was running into trouble setting this up on PythonAnywhere. Renamed 'app' to 'application'. Need some changes for MySQL
 5. Way better practices for config file than putting on github :P
 6. Nginx for serving static resources.
 7. Webpack or gulp or something to minify, practice using with simple project/low stakes.
