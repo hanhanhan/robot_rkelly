@@ -2,7 +2,7 @@
 
 {% block head %}
     {{ super() }}
-    <meta property="og: url" content="url_for(.index, _external=True)">
+    <meta property="og:url" content="{{url_for('.index', _external=True)}}">
 {% endblock %}
 
 {% block contents %}
