@@ -6,14 +6,17 @@
 
 {% block contents %}
 
-    <div>
+<div>
 
-        <div class="glitch-container">
-            <h1 data-text="R.Kelly" class="robo-glam glitch">R.Kelly</h1>
-        </div>
-        
-        <a class="lyrics-please" href="{{ url_for('.lyrics') }}">Please Write Me a Song</a>
-
+    <div class="glitch-container">
+        <h1 data-text="R.Kelly" class="robo-glam glitch">R.Kelly</h1>
     </div>
+
+    <form action="{{ url_for('.lyrics') }}">
+    <button type="submit">
+    <span class="avoidwrap">Please Write</span> <span class="avoidwrap">Me a Song</span></button>
+    </form>
+
+</div>
 
 {% endblock %}

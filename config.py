@@ -15,8 +15,8 @@ class Config:
     DATABASE = os.environ.get('DATABASE')
 
     # SQLALCHEMY_DATABASE_URI = f'postgresql://{DATABASE_USER}:{DATABASE_PASSWORD}@{HOSTNAME}/{DATABASE}'
-    # SQLALCHEMY_DATABASE_URI ='postgresql://rkelly:hello@localhost/rkelly'
-    SQLALCHEMY_DATABASE_URI = f'postgresql://{DATABASE_USER}:{DATABASE_PASSWORD}@{HOSTNAME}/{DATABASE}'
+    SQLALCHEMY_DATABASE_URI ='postgresql://rkelly:hello@localhost/rkelly'
+    # SQLALCHEMY_DATABASE_URI = f'postgresql://{DATABASE_USER}:{DATABASE_PASSWORD}@{HOSTNAME}/{DATABASE}'
 
 
     @staticmethod

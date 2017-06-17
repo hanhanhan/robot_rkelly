@@ -5,18 +5,25 @@
 {% endblock %}
 
 {% block contents %}
-    <div class="lyrics">
-        <h3 class="title">
+    
+        <h2 class="robo-glam">
             {{ song.title }}
-        </h3>
+        </h2>
+    <div class="lyrics">
         {{ song.song_lyrics | safe }}
     </div>  
 
     <div>
         <h3 class="robo-glam">By Robot Kelly</h3>
     </div>
+    <br>
     <div>
-        <a href="{{ url_for('.linked_lyrics', id=id) }}"></a>
-        <a class="lyrics-please" href="{{ url_for('.lyrics') }}"></a>
+        <form action="{{ url_for('.lyrics') }}">
+        <button type="submit">Please 
+        Write Me Another</button>
+        </form>
+    </div>
+    <div>
+        <a href="{{ url_for('.linked_lyrics', id=song.id) }}">Share this one</a>
     </div>
 {% endblock %}

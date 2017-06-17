@@ -1,57 +1,14 @@
 body { 
     font-family: sans-serif; 
     background: darkred; 
-    position: relative;
-    margin-left: 30hw;
-    padding-left: 30hw;
     font-family: 'Rubik Mono One', sans-serif, bold;
-    display: flex;
-    height: 100vh;
-    flex-direction: row;
-    align-items: flex-start;
-}
-
-main {
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 10hw;
-  width: 70hw;
-}
-
-nav {
-  align-self: center;
-  flex: 1 0 40px;
-  position: fixed;
-  top: 25vh;
-  right: 0px;
-}
-
-ul {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-}
-
-img {
-  display: block;
-  float: right;
-}
-
-h1, h2, h3 {
-  font-family: 'Rubik Mono One', sans-serif;
-  margin-top: 0.4em;
-  margin-bottom: 0.4em;
-}
-
-preview {
-  margin: 30px;
+    margin-left: 3vw;
 }
 
 /*  why not inherit font-fam from html? */
-.lyrics-please {
-    padding: 10px 20px;
-    margin-left: 22px;
-    font-size: 1.5em;
+button {
+    margin: auto;
+    font-size: 1.3em;
     text-decoration: none;
     border-style: outset;
     border-color: lightgray;
@@ -60,29 +17,23 @@ preview {
     font-family: 'Rubik Mono One', sans-serif, bold;
 }
 
-.lyrics-please:hover {
+button:hover {
     background-color: greenyellow;
+}
+
+span.avoidwrap {
+  display: inline-block;
 }
 
 .lyrics {
     color: white;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.5em;
-    margin-bottom: 50px;
-}
-
-.lyrics-please-container {
 }
 
 .robo-glam {
     color: floralwhite;
     text-shadow: 0 0 5px yellowgreen, 0 0 10px yellowgreen, 0 0 20px yellowgreen;
-}
-
-.glitch {
-    font-size: 4em;
-    padding: 20px; 
-    animation: robotify 10s infinite alternate linear;
 }
 
 .glitch-container{
@@ -92,15 +43,17 @@ preview {
 .glitch {
     position: relative;
     color: white;
-    padding: 20px;
     font-size: 4em;
     text-shadow: 0 0 5px yellowgreen, 0 0 10px yellowgreen, 0 0 20px yellowgreen;
+    font-size: 4em;
+    padding: 10px; 
+    animation: robotify 10s infinite alternate linear;
 }
 
 .glitch::before {
     position: absolute;
     content: attr(data-text);
-    padding: 20px;
+    padding: 10px;
     top: 0px;
     left: -2px;
     background: darkred;
@@ -113,7 +66,7 @@ preview {
 .glitch::after {
     position: absolute;
     content: attr(data-text);
-    padding: 20px;
+    padding: 10px;
     top: 0;
     left: 2px;
     background: darkred;
