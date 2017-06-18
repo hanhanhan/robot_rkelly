@@ -32,14 +32,34 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Robot R.Kelly">
     <meta property="og:description" content="Let Robot R.Kelly write you a beautiful song.">
-    <meta property="og:image" content="{{url_for('static', filename='icons/facebook_robokelly_600.jpg', _external=True)}}">
+    <meta property="og:image" content="{{url_for('static', filename='icons/robokelly_fb.jpg', _external=True)}}">
     
 {% endblock %}
    
 </head>
 
 <body>
+{# facebook SDK #}
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '140201889868560',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();   
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 <main>
     {% block contents %}    
     {% endblock %}   
@@ -50,21 +70,9 @@
 {% endblock %}
 
 {% block script %}
-    <!-- Load Facebook SDK for JavaScript -->
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
 
   <!-- Your share button code -->
-  <div class="fb-share-button" 
-     data-href="{{ url_for('.index', _external=True) }}"
-    data-layout="button_count">
-  </div>
+<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
 
     <script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
 {% endblock %}
