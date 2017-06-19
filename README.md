@@ -8,3 +8,5 @@ Inspired by:
 
 -[Daniel Schiffman's explanation of Markov chains](https://www.youtube.com/watch?v=eGFJ8vugIWA)
 
+Just a small project to try out using flask, a database, and setting up a server.
+
