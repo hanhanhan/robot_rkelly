@@ -2,14 +2,14 @@
 <html lang='en'>
 <head>
 {% block head %}
-    <title>Robot Kelly</title>
-    <meta name="viewport" content="initial-scale=1">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+<title>Robot Kelly</title>
+<meta name="viewport" content="initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
 
-    {# favicons #}
-    <link rel="manifest" href="{{ url_for('static', filename='icons/manifest.json') }}">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='icons/favicon.ico') }}">
+{# favicons #}
+<link rel="manifest" href="{{ url_for('static', filename='icons/manifest.json') }}">
+<meta name="theme-color" content="#ffffff">
+<link rel="shortcut icon" href="{{ url_for('static', filename='icons/favicon.ico') }}">
 
 <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='icons/apple-touch-icon.png') }}">
 
@@ -23,24 +23,24 @@
 
 <meta name="theme-color" content="#ffffff">
 
-    {# fonts #}
-    <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One|Open+Sans" rel="stylesheet">
+{# fonts #}
+<link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One|Open+Sans" rel="stylesheet">
 
 
-    {# open graph #}
-    <meta property="og:url" content="{{ url_for('.index', _external=True) }}">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Robot R.Kelly">
-    <meta property="og:description" content="Let Robot R.Kelly write you a beautiful song.">
-    <meta property="og:image" content="{{url_for('static', filename='icons/robokelly_fb.jpg', _external=True)}}">
+{# open graph #}
+<meta property="og:url" content="{{ url_for('.index', _external=True) }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Robot R.Kelly">
+<meta property="og:description" content="Let Robot R.Kelly write you a beautiful song.">
+<meta property="og:image" content="{{url_for('static', filename='icons/robokelly_fb.jpg', _external=True)}}">
     
 {% endblock %}
    
 </head>
 
 <body>
-{# facebook SDK #}
 
+{# facebook SDK #}
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -71,10 +71,16 @@
 
 {% block script %}
 
-  <!-- Your share button code -->
-<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
 
-    <script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
+<div>
+
+  <div class="social fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large" data-mobile-iframe="true">
+  <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a>
+  </div>
+
+  <a  href="github.com/hanhanhan/robot_rkelly" title="Github"><img class="social" src="{{ url_for('static', filename='icons/GitHub-Mark-Light-64px.png') }} "/></a>
+
+</div>
 {% endblock %}
 </body>
 </html>

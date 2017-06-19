@@ -8,7 +8,8 @@ body {
 /*  why not inherit font-fam from html? */
 button {
     margin: auto;
-    font-size: 1.3em;
+    padding: 10px;
+    font-size: 1.5em;
     text-decoration: none;
     border-style: outset;
     border-color: lightgray;
@@ -17,12 +18,25 @@ button {
     font-family: 'Rubik Mono One', sans-serif, bold;
 }
 
+.social {
+  padding-top: 30px;
+  height: 30px;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
 button:hover {
     background-color: greenyellow;
 }
 
 span.avoidwrap {
   display: inline-block;
+}
+
+.fb-share-button {
+  margin-top: 1em;
 }
 
 .lyrics {
@@ -44,10 +58,17 @@ span.avoidwrap {
     position: relative;
     color: white;
     font-size: 4em;
+    /* font-size: 15vw; */
     text-shadow: 0 0 5px yellowgreen, 0 0 10px yellowgreen, 0 0 20px yellowgreen;
-    font-size: 4em;
+    /* font-size: 4em; */
     padding: 10px; 
     animation: robotify 10s infinite alternate linear;
+}
+
+@media only screen and (max-width: 768px) {
+  .glitch {
+    font-size: 15vw;
+  }
 }
 
 .glitch::before {

@@ -28,10 +28,10 @@ def lyrics():
 
     lyrics_model = Multi_Split(all_lyrics)
 
-    verse_length = randint(3, 6)
+    verse_length = randint(3, 4)
     # verse_length = randint(20, 20)
     chorus_length = randint(1, 3)
-    verses = randint(2, 4)
+    verses = randint(2, 3)
     # verses = randint(10, 14)
     repeat_chorus = randint(0, 1)
     chorus = None
