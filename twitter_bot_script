@@ -1,0 +1,5 @@
+#! /bin/bash
+
+cd  /home/hannah/sites/robot_kelly/
+source /home/hannah/miniconda3/bin/activate flask
+/home/hannah/miniconda3/envs/flask/bin/python /home/hannah/sites/robot_kelly/twitter_bot.py

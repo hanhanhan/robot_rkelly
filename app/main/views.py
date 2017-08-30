@@ -1,4 +1,3 @@
-import os
 import re
 from random import randint, sample
 
@@ -29,13 +28,25 @@ def lyrics():
     lyrics_model = Multi_Split(all_lyrics)
 
     verse_length = randint(3, 4)
-    # verse_length = randint(20, 20)
+
     chorus_length = randint(1, 3)
     verses = randint(2, 3)
-    # verses = randint(10, 14)
+
     repeat_chorus = randint(0, 1)
     chorus = None
     song_lyrics = ""
+    pattern = r'\b(i)(\'[dm])?\b'
+    reg = re.compile(pattern)
+
+
+    def pronoun_fix(section):
+        def repl(m):
+            capitalized = m.group(1)
+            if m.group(2):
+                capitalized += m.group(2)
+            return capitalized
+
+        return re.sub(reg, repl, section)
 
     def add_line(section):
         line = lyrics_model.make_sentence(
@@ -43,6 +54,7 @@ def lyrics():
         if line:
             line = line.lstrip()
             line = line.capitalize()
+            line = pronoun_fix(line)
             section = section + "<br>" + line
         return section
 
@@ -54,7 +66,7 @@ def lyrics():
     def make_title(song_lyrics):
         lyrics_words = re.split('\s*<br>\s*|\W', song_lyrics)
         title_word = sample(lyrics_words[:50], 1)[0]
- 
+
         if len(title_word) > 3:
             end = lyrics_words.index(title_word) + 1
             start = randint(end - 3, end - 1)
@@ -62,7 +74,6 @@ def lyrics():
                 start = 0
             title_list = lyrics_words[start:end]
             title = " ".join(title_list).title()
-            
             return title
 
         return make_title(song_lyrics)
@@ -73,10 +84,10 @@ def lyrics():
         if not chorus or not repeat_chorus:
             chorus = make_section(chorus_length, "")
 
-        song_lyrics = song_lyrics + chorus 
+        song_lyrics = song_lyrics + chorus
 
     song_title = make_title(song_lyrics)
- 
+
     lyrics_db_item = SongLyrics(title=song_title, song_lyrics=song_lyrics)
 
     db.session.add(lyrics_db_item)

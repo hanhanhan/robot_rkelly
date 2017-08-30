@@ -1,20 +1,19 @@
 import re
 import requests
 
+from datetime import datetime
+
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 import tweepy
 
-from time import sleep
-import os
 
-URL = 'https://rkelly.hanhanhan.org/song-lyrics'
+URL = 'https://rkelly.hanhanhan.org/song-lyrics/'
 TWEET_LENGTH = 140
 TWITTER_LINK_LENGTH = 23 + 1
 
 
 def make_config_dict(f):
-  
+
   d = {}
 
   with open(f) as info:
@@ -35,8 +34,7 @@ def get_db_uri():
   database_uri = 'postgresql://{}:{}@localhost/{}'.format(database, password, user) 
 
   # database_uri ='postgresql://rkelly:hello@localhost/rkelly'
-  return database_uri 
-
+  return database_uri
 
 def authenticate_twitter():
   twitter_config = make_config_dict('twitter.env')
@@ -62,8 +60,6 @@ def generate_song():
 
 
 def get_lyrics(song_id, database_uri):
-  if song_id is None:
-    song_id=5
 
   engine = create_engine(database_uri)
   connection = engine.connect()
@@ -107,13 +103,16 @@ def tweet(short_lyrics, api, url):
     try:
         api.update_status(tweet)
     except tweepy.TweepError as e:
-        print('This happened :( {}'.format((e.api_code)))
+        with open('/var/log/robot_kelly_twitterbot.log', 'a') as file:
+          time = str(datetime.now())
+          message = time + 'For tweet "{}"'.format(tweet) + 'This happened :( {}'.format((e.api_code))
+          file.write(message)
 
 def main():
   api = authenticate_twitter()
   song_url = generate_song()
   regex = '(?:{})(\d+)'.format(URL)
-  song_id = re.search(regex, song_url)
+  song_id = re.search(regex, song_url).groups()[0]
 
   db_uri = get_db_uri()
   lyrics = get_lyrics(song_id, db_uri)
