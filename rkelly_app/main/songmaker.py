@@ -100,6 +100,7 @@ class Song:
         self.title = self.make_title(lyrics)
 
     def save(self):
-        song_lyrics = SongLyrics(title=self.title, song_lyrics=self.lyrics)
+        song_lyrics = SongLyrics(
+            title=self.title, song_lyrics=self.song_lyrics)
         song_lyrics.save()
         return song_lyrics.id

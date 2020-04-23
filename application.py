@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import os
-from app import create_app, db
+from rkelly_app import create_app, db
 
 # set environment variables
 # hard code file name?
@@ -15,8 +15,8 @@ if os.path.exists('rkelly.env'):
 else:
     print('not importing env locally')
 
-application = create_app(os.getenv('FLASK_CONFIG') or 'default')
+app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 
 
 if __name__ == '__main__':
-    application.run()
+    app.run()

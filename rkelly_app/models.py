@@ -1,3 +1,4 @@
+from flask import current_app
 from . import db
 from datetime import datetime
 
@@ -15,6 +16,7 @@ class SongLyrics(db.Model):
             db.session.commit()
         except:
             db.session.rollback()
-            print("saving the song didn't work")
+            current_app.logger(
+                "saving the song {} didn't work".format(self.title))
         finally:
             db.session.close()
