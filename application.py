@@ -13,11 +13,10 @@ if os.path.exists('rkelly.env'):
             if len(var) is 2:
                 os.environ[var[0]] = var[1]
 else:
-    print('not importing env')
+    print('not importing env locally')
 
 application = create_app(os.getenv('FLASK_CONFIG') or 'default')
 
 
 if __name__ == '__main__':
     application.run()
-
