@@ -3,12 +3,11 @@ from random import randint, sample
 import functools
 
 import markovify
-from flask import render_template, url_for, redirect
+from flask import render_template, url_for, redirect, make_response, session
 from flask import current_app
 
 from .songmaker import Song
 from ..models import SongLyrics
-from .. import db
 from . import main
 
 
@@ -27,25 +26,17 @@ def lyrics():
     song = Song()
     song.build()
 
-    songlyrics = SongLyrics(
-        title=song.title,
-        song_lyrics=song.song_lyrics)
-
     try:
-        songlyrics.save()
-    except Exception as e:
-        current_app.logger.warn('Song did not save to database\n {}'.format(e))
-        return render_template('lyrics.html', song=song)
-    else:
-        return redirect(url_for('.linked_lyrics', song=song, id=songlyrics.id))
+        song_id = song.save()
+        return redirect(url_for('.linked_lyrics', id=song_id))
 
-    return redirect(url_for('.index'))
+    except Exception:
+        return render_template('lyrics.html', song=song)
 
 
 @main.route('/song-lyrics/<int:id>', methods=['GET'])
 def linked_lyrics(id, song=None):
     if not song:
-        current_app.logger.warn('Song requested, 404 returned.'.format(id))
         song = SongLyrics.query.get_or_404(id)
     return render_template('lyrics.html', song=song)
 

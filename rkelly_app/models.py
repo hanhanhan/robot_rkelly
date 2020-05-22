@@ -14,9 +14,9 @@ class SongLyrics(db.Model):
         try:
             db.session.add(self)
             db.session.commit()
-        except:
+        except Exception as e:
             db.session.rollback()
-            current_app.logger(
-                "saving the song {} didn't work".format(self.title))
-        finally:
-            db.session.close()
+            current_app.logger.warn("Saving song didn't work.\n {}".format(e))
+
+        current_app.logger.info('Id of newly created song;', self.id)
+        return self.id
