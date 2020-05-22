@@ -1,26 +1,26 @@
-body { 
-    font-family: sans-serif; 
-    background: darkred; 
-    font-family: 'Rubik Mono One', sans-serif, bold;
-    margin-left: 3vw;
+body {
+  font-family: sans-serif;
+  background: darkred;
+  font-family: 'Rubik Mono One', sans-serif, bold;
+  margin-left: 3vw;
 }
 
 /*  why not inherit font-fam from html? */
 button {
-    margin: auto;
-    padding: 10px;
-    font-size: 1.5em;
-    text-decoration: none;
-    border-style: outset;
-    border-color: lightgray;
-    background-color: whitesmoke;
-    color: black;
-    font-family: 'Rubik Mono One', sans-serif, bold;
+  margin: auto;
+  padding: 10px;
+  font-size: 1.5em;
+  text-decoration: none;
+  border-style: outset;
+  border-color: lightgray;
+  background-color: whitesmoke;
+  color: black;
+  font-family: 'Rubik Mono One', sans-serif, bold;
 }
 
 .social {
-  padding-top: 30px;
-  height: 30px;
+  padding: 1.5em 0.2em;
+  height: 2em;
 }
 
 h3 {
@@ -28,41 +28,37 @@ h3 {
 }
 
 button:hover {
-    background-color: greenyellow;
+  background-color: greenyellow;
 }
 
 span.avoidwrap {
   display: inline-block;
 }
 
-.fb-share-button {
-  margin-top: 1em;
-}
-
 .lyrics {
-    color: white;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.5em;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5em;
 }
 
 .robo-glam {
-    color: floralwhite;
-    text-shadow: 0 0 5px yellowgreen, 0 0 10px yellowgreen, 0 0 20px yellowgreen;
+  color: floralwhite;
+  text-shadow: 0 0 5px yellowgreen, 0 0 10px yellowgreen, 0 0 20px yellowgreen;
 }
 
-.glitch-container{
-    position: relative;
+.glitch-container {
+  position: relative;
 }
 
 .glitch {
-    position: relative;
-    color: white;
-    font-size: 4em;
-    /* font-size: 15vw; */
-    text-shadow: 0 0 5px yellowgreen, 0 0 10px yellowgreen, 0 0 20px yellowgreen;
-    /* font-size: 4em; */
-    padding: 10px; 
-    animation: robotify 10s infinite alternate linear;
+  position: relative;
+  color: white;
+  font-size: 4em;
+  /* font-size: 15vw; */
+  text-shadow: 0 0 5px yellowgreen, 0 0 10px yellowgreen, 0 0 20px yellowgreen;
+  /* font-size: 4em; */
+  padding: 10px;
+  animation: robotify 10s infinite alternate linear;
 }
 
 @media only screen and (max-width: 768px) {
@@ -72,29 +68,29 @@ span.avoidwrap {
 }
 
 .glitch::before {
-    position: absolute;
-    content: attr(data-text);
-    padding: 10px;
-    top: 0px;
-    left: -2px;
-    background: darkred;
-    text-shadow: -6px 0 blue;
-    
-    clip: rect(44px, 450px, 56px, 0); 
-    animation: glitch-anim 0.8s infinite linear alternate-reverse; 
+  position: absolute;
+  content: attr(data-text);
+  padding: 10px;
+  top: 0px;
+  left: -2px;
+  background: darkred;
+  text-shadow: -6px 0 blue;
+
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 0.8s infinite linear alternate-reverse;
 }
 
 .glitch::after {
-    position: absolute;
-    content: attr(data-text);
-    padding: 10px;
-    top: 0;
-    left: 2px;
-    background: darkred;
-    text-shadow: -4px 0 yellow;
-    
-    clip: rect(40px, 450px, 56px, 0);
-    animation: glitch-anim 1.2s infinite linear alternate-reverse;
+  position: absolute;
+  content: attr(data-text);
+  padding: 10px;
+  top: 0;
+  left: 2px;
+  background: darkred;
+  text-shadow: -4px 0 yellow;
+
+  clip: rect(40px, 450px, 56px, 0);
+  animation: glitch-anim 1.2s infinite linear alternate-reverse;
 }
 
 
@@ -103,22 +99,24 @@ span.avoidwrap {
   0% {
     clip: rect(70px, 450px, 76px, 0);
   }
+
   20% {
     clip: rect(29px, 450px, 16px, 0);
   }
+
   40% {
     clip: rect(76px, 450px, 3px, 0);
   }
+
   60% {
     clip: rect(42px, 450px, 78px, 0);
   }
+
   80% {
     clip: rect(15px, 450px, 13px, 0);
   }
+
   100% {
     clip: rect(53px, 450px, 5px, 0);
   }
 }
-
-
-
